@@ -3,16 +3,14 @@
  */
 
 const players = {
-    players: [
-        {
-            name: 'player 1',
-            score: 1
-        },
-        {
-            name: 'player 2',
-            score: 2
-        }
-    ],
+    player0: {
+        name: 'Player 1',
+        score: 0
+    },
+    player1: {
+        name: 'Player 2',
+        score: 0
+    },
     currentPlayer: true
 };
 

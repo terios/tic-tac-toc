@@ -11,9 +11,9 @@ const Player = React.createClass({
         return (
             <div className="player">
                 <p>
-                    <strong>Player 1</strong>
+                    <strong>{this.props.player.name}</strong>
                 </p>
-                <span className="score">0</span>
+                <span className="score">{this.props.player.score}</span>
             </div>
         )
     }

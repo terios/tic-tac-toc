@@ -9,26 +9,16 @@ import CheckWinner from '../helpers/checkWinner';
 function players(state = [], action) {
     switch (action.type) {
         case 'INCREMENT_SCORE':
-            console.log('update score');
             return state;
         case 'CHECK_WINNER':
-            console.log('check winner');
-            console.log(state);
-            console.log(action);
-            var winnerId = CheckWinner(action.grid);
-            console.log(winnerId);
+            var winnerId = CheckWinner(action.action);
             if (winnerId) {
-                return {
-                    ...state,
-                    players: [
-                        ...state.players[0, winnerId],
-                        {score: state.players[winnerId].score + 1},
-                        ...state.players[winnerId]
-                    ]
-                };
+                var tmp = Object.assign({}, state);
+                tmp['player' + winnerId].score = tmp['player' + 1].score + 1;
+                return tmp;
             }
             return state;
-        case 'NEXT_PLAYER':
+        case 'SELECT_SQUARE':
             return {
                 // take the current state
                 ...state,

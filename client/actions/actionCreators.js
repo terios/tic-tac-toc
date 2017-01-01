@@ -15,10 +15,14 @@ export function selectSquare(player, row, index) {
     return {type: 'SELECT_SQUARE', player, row, index}
 }
 
+export function newGame() {
+    return {type: 'NEW_GAME'}
+}
+
 export function nextPlayer() {
     return {type: 'NEXT_PLAYER'}
 }
 
-export function checkWinner(grid) {
-    return {type: 'CHECK_WINNER', grid}
+export function checkWinner() {
+    return {type: 'CHECK_WINNER'}
 }

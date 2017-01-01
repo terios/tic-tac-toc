@@ -24,16 +24,15 @@ const GameBoard = React.createClass({
         )
     },
     render(){
-        console.log(this.props);
         return (
             <div className="content">
-                <Player/>
+                <Player player={this.props.players.player0}/>
                 <div className="game-board">
                     <table>
                         {this.getGrid()}
                     </table>
                 </div>
-                <Player/>
+                <Player player={this.props.players.player1}/>
             </div>
         )
     }

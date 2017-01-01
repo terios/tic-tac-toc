@@ -3,7 +3,7 @@
  */
 
 import React from 'react';
-
+import store from '../store';
 
 const Square = React.createClass({
 
@@ -15,8 +15,6 @@ const Square = React.createClass({
                 e.target.className = 'circle'
             }
             this.props.selectSquare(this.props.players.currentPlayer, this.props.row, this.props.index);
-            this.props.checkWinner(this.props.grid);
-            this.props.nextPlayer();
         }
     },
     render(){
